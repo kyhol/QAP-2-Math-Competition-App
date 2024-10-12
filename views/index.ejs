@@ -2,14 +2,42 @@
 <%- include('partials/header') %>
     <main class="main-content index_container">
         <h1>Welcome to the Math Competition App</h1>
+        
+        <% if (streak > 0) { %>
+            <p class="current-streak">Current Streak: <%= streak %></p>
+        <% } %>
+
+        <form action="/quiz" method="get" class="difficulty-form">
+            <h2>Choose your difficulty:</h2>
+            <div class="difficulty-options">
+                <label>
+                    <input type="radio" name="difficulty" value="easy" checked>
+                    Easy
+                </label>
+                <label>
+                    <input type="radio" name="difficulty" value="medium">
+                    Medium
+                </label>
+                <label>
+                    <input type="radio" name="difficulty" value="hard">
+                    Hard
+                </label>
+            </div>
+            <button type="submit" class="btn btn-start">Start Quiz</button>
+        </form>
+
         <div class="navigation__container">
-            <a href="/leaderboards">
-                View Leaderboards
-            </a>
-            <a href="/quiz">
-                Start Quiz
+            <a href="/leaderboard" class="btn btn-leaderboard">
+                View Leaderboard
             </a>
         </div>
+
+        <% if (leaderBoard.length > 0) { %>
+            <div class="top-score">
+                <h3>Top Score:</h3>
+                <p><%= leaderBoard[0].streak %> (<%=leaderBoard[0].difficulty%>) on <%= new Date(leaderBoard[0].date).toLocaleDateString() %></p>
+            </div>
+        <% } %>
     </main>
 </body>
 </html>
