@@ -1,15 +1,30 @@
+
+
 <!-- Add the header ejs template to get our CSS loaded -->
 <%- include('partials/header') %>
+ <!-- Display question or whatever else here -->
 
-    <!-- Display question or whatever else here -->
+<main class="main-content quiz-container">
     <h1>Math Quiz</h1>
-    <p>Answer the question below:</p>
+    
+    <div class="quiz-info">
+        <p>Difficulty: <%= difficulty %></p>
+        <% if (typeof streak !== 'undefined') { %>
+            <p>Current Streak: <%= streak %></p>
+        <% } %>
+    </div>
 
-    <form action="/quiz" method="POST">
+    <div class="question-container">
+        <p>Answer the question below:</p>
+        <h2 class="question"><%= question %></h2>
+    </div>
+
+    <form action="/quiz" method="POST" class="quiz-form">
         <!-- This handles sending the user's answer back to the server. It's not recommended you modify this, as you shouldn't need to -->
         <label for="answer">Your Answer:</label>
         <input type="text" id="answer" name="answer" required>
-        <button type="submit">Submit</button>
+        <button type="submit" class="btn btn-submit">Submit</button>
     </form>
+</main>
 </body>
 </html>

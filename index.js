@@ -1,3 +1,8 @@
+// Author: Kyle Hollett
+// Date: 2024-10-12
+
+// index.js
+
 const express = require("express");
 const app = express();
 const port = 3000;
@@ -26,6 +31,7 @@ app.get("/quiz", (req, res) => {
   res.render("quiz", {
     question: lastQuestion.question,
     difficulty: currentDifficulty,
+    streak: currentStreak,
   });
 });
 
@@ -33,7 +39,12 @@ app.get("/quiz", (req, res) => {
 app.post("/quiz", (req, res) => {
   const { answer } = req.body;
 
-  if (lastQuestion && isCorrectAnswer(lastQuestion.question, answer)) {
+  if (!lastQuestion) {
+    // If there's no last question, redirect to the quiz page to get a new question
+    return res.redirect("/quiz");
+  }
+
+  if (isCorrectAnswer(lastQuestion.question, answer)) {
     // They've done it! Another one bites the dust
     currentStreak++;
     res.render("completion", {

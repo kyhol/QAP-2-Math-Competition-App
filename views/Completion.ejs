@@ -1,0 +1,24 @@
+<%- include('partials/header') %>
+<main class="main-content completion_container">
+    <h1>Quiz Result</h1>
+
+    <% if (correct) { %>
+        <h2>Congratulations!</h2>
+        <p class="result-message"><%= message %></p>
+        <p class="current-streak">Your current streak is: <strong><%= streak %></strong></p>
+        <p>Difficulty Level: <strong><%= difficulty %></strong></p>
+    <% } else { %>
+        <h2>Oops!</h2>
+        <p class="result-message"><%= message %></p>
+        <p class="current-streak">Your current streak was: <strong><%= streak %></strong></p>
+        <p>Difficulty Level: <strong><%= difficulty %></strong></p>
+    <% } %>
+
+    <div class="navigation__container">
+        <a href="/quiz" class="btn btn-try-again">Try Another Question</a>
+        <a href="/leaderboard" class="btn btn-leaderboard">View Leaderboard</a>
+        <a href="/" class="btn btn-home">Home</a>
+    </div>
+</main>
+</body>
+</html>

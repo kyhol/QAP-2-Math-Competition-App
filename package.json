@@ -7,7 +7,7 @@
     "start": "node --watch index.js",
     "test": "jest"
   },
-  "author": "Matthew English",
+  "author": "Kyle Hollett",
   "license": "MIT",
   "devDependencies": {
     "ejs": "^3.1.10",
