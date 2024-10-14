@@ -1,30 +1,39 @@
-
-
+<!-- quiz.ejs -->
 <!-- Add the header ejs template to get our CSS loaded -->
 <%- include('partials/header') %>
- <!-- Display question or whatever else here -->
-
+<!-- Display question or whatever else here -->
 <main class="main-content quiz-container">
-    <h1>Math Quiz</h1>
-    
+  <div class="quiz-card">
+    <h1 class="quiz-title">Math Wizard Challenge</h1>
+
     <div class="quiz-info">
-        <p>Difficulty: <%= difficulty %></p>
-        <% if (typeof streak !== 'undefined') { %>
-            <p>Current Streak: <%= streak %></p>
-        <% } %>
+      <p class="difficulty">
+        Difficulty: <span class="difficulty-level"><%= difficulty %></span>
+      </p>
+      <% if (typeof streak !== 'undefined') { %>
+      <p class="streak">
+        Current Streak: <span class="streak-count"><%= streak %></span>
+      </p>
+      <% } %>
     </div>
 
     <div class="question-container">
-        <p>Answer the question below:</p>
-        <h2 class="question"><%= question %></h2>
+      <p class="question-prompt">Solve this magical equation:</p>
+      <h2 class="question"><%= question %></h2>
     </div>
-
+    <!-- This handles sending the user's answer back to the server. It's not recommended you modify this, as you shouldn't need to -->
     <form action="/quiz" method="POST" class="quiz-form">
-        <!-- This handles sending the user's answer back to the server. It's not recommended you modify this, as you shouldn't need to -->
-        <label for="answer">Your Answer:</label>
-        <input type="text" id="answer" name="answer" required>
-        <button type="submit" class="btn btn-submit">Submit</button>
+      <div class="input-group">
+        <label for="answer" class="answer-label">Your Spell (Answer):</label>
+        <input
+          type="text"
+          id="answer"
+          name="answer"
+          required
+          class="answer-input"
+        />
+      </div>
+      <button type="submit" class="btn btn-submit">Cast Your Spell!</button>
     </form>
+  </div>
 </main>
-</body>
-</html>

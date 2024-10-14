@@ -1,7 +1,7 @@
 {
   "name": "keyin-math-competition-base",
   "version": "1.0.0",
-  "description": "A repository to use as a base when building your math competition app.",
+  "description": "My Math App!.",
   "main": "index.js",
   "scripts": {
     "start": "node --watch index.js",

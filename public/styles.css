@@ -98,9 +98,234 @@ body {
   background-color: #218838;
 }
 
+.quiz-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  max-width: 400px;
+  width: 100%;
+}
+
+.quiz-title {
+  color: #3b82f6;
+  font-size: 1.875rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.result-heading {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.result-heading.success {
+  color: #10b981;
+}
+
+.result-heading.failure {
+  color: #ef4444;
+}
+
+.result-message,
+.current-streak,
+.difficulty-level {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #4b5563;
+}
+
+.current-streak strong,
+.difficulty-level strong {
+  color: #3b82f6;
+}
+
+.navigation__container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #2563eb;
+}
+
+.btn-try-again {
+  background-color: #10b981;
+}
+
+.btn-try-again:hover {
+  background-color: #059669;
+}
+
+.btn-leaderboard {
+  background-color: #f59e0b;
+}
+
+.btn-leaderboard:hover {
+  background-color: #d97706;
+}
+
+.btn-home {
+  background-color: #6b7280;
+}
+
+.btn-home:hover {
+  background-color: #4b5563;
+}
+
+.difficulty-level,
+.streak-count {
+  font-weight: bold;
+  color: #3b82f6;
+}
+
+.question-container {
+  background-color: #f3f4f6;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.question-prompt {
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.question {
+  font-size: 1.5rem;
+  color: #1f2937;
+  text-align: center;
+  margin: 0;
+}
+
+.quiz-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.answer-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #4b5563;
+  font-size: 0.875rem;
+}
+
+.answer-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.btn-submit {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #2563eb;
+}
 .top-score {
   margin-top: 20px;
   padding: 10px;
   background-color: #020b14;
   border-radius: 5px;
+}
+.main-content {
+  text-align: center;
+  margin: 20px;
+}
+
+.leaderboard-table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.leaderboard-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333;
+}
+.leaderboard-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: center;
+  background: white;
+}
+
+.leaderboard-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.leaderboard-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+a:hover {
+  background-color: #0056b3;
+}
+
+.table-top-text {
+  font-weight: 600;
+  font-size: 1.3em;
+  font-family: poppins;
+}
+
+.table-bot-text {
+  font-weight: 400;
+  font-size: 1em;
+  font-family: poppins;
+  color: black;
+}
+.black {
+  color: black;
 }
