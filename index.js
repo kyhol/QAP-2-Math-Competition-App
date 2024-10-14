@@ -67,11 +67,24 @@ app.post("/quiz", (req, res) => {
       leaderBoard = leaderBoard.slice(0, 10);
     }
 
+    let message;
+    if (currentStreak === 0) {
+      message = "Wow, zero streak? Did you mistake this for a guessing game?";
+    } else if (currentStreak === 1) {
+      message = "Hey, you got one right! That's a start. Keep going!";
+    } else if (currentStreak > 1 && currentStreak <= 3) {
+      message = `You made it to ${currentStreak} on ${currentDifficulty} mode. Not bad, but I believe you can do better!`;
+    } else if (currentStreak > 3 && currentStreak <= 5) {
+      message = `You made it to ${currentStreak} on ${currentDifficulty} mode. Not too shabby, buckeroo!`;
+    } else {
+      message = `Incredible! You reached ${currentStreak} on ${currentDifficulty} mode. You're a math maestro!`;
+    }
+
     res.render("completion", {
       correct: false,
       streak: currentStreak,
       difficulty: currentDifficulty,
-      message: `Aw, I'm sorry, the doctor called and you've been diagnosed as "Bad at Math" My condolences! The answer was ${lastQuestion.answer}. You made it to ${currentStreak} on ${currentDifficulty} mode. Not too shabby buckeroo!`,
+      message: `Aw, I'm sorry, the doctor called and you've been diagnosed as "Bad at Math". My condolences! The answer was ${lastQuestion.answer}. ${message}`,
     });
     currentStreak = 0; // Back to square one
   }
